@@ -1,0 +1,14 @@
+<div *ngIf="loading">Carregando...</div>
+<div *ngIf="onError">error</div>
+<app-grid
+  *ngIf="!onError"
+  [isLoading]="loading"
+  [items]="pageableItems()"
+></app-grid>
+
+<button (click)="previousPage()" [disabled]="isFirstPage || loading">
+  Página Anterior
+</button>
+<button (click)="nextPage()" [disabled]="isLastPage || loading">
+  Próxima Página
+</button>

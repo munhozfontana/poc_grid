@@ -1,0 +1,8 @@
+<div *ngIf="!isLoading" class="grid">
+  <app-card
+    *ngFor="let card of items"
+    [title]="card.name"
+    [content]="card.sector"
+  ></app-card>
+</div>
+<div *ngIf="isLoading">Carregando...</div>
